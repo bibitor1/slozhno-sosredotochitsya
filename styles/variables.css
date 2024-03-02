@@ -1,4 +1,10 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
+/* Переменные тёмной темы */
+
+:root {
+  --title-color: #db00ff;
+  --accent-second-color: #ff0070;
+  --bg-color: #000028;
+  --accent-color: #ff0070;
+  --accent-font-color: #000028;
+  --font-color: #f1b2ce;
+}
