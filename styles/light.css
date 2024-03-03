@@ -13,7 +13,6 @@
 }
 
 .page.theme_light .header__theme-menu-button:hover {
-  padding: 0 12px;
   border: 1px solid rgba(50, 49, 45, 0.4);
 }
 
@@ -34,7 +33,7 @@
   .decorate {
     display: none;
   }
-  
+
   .header__theme-menu-button:hover {
     border: 1px solid rgba(50, 49, 45, 0.4);
   }
