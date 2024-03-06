@@ -1,5 +1,365 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  background-color: var(--bg-color);
+  background-image: url(../images/cover-image-dark.png);
+  background-position: center;
+  block-size: 100%;
+  inline-size: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__theme-menu-button {
+  background-color: transparent;
+  border: none;
+  display: block;
+  font-size: 18px;
+  line-height: 100%;
+  color: var(--accent-second-color);
+  text-transform: lowercase;
+  min-height: 26px;
+  padding: 0px 13px;
+  cursor: pointer;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--accent-second-color);
+  pointer-events: none;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid rgba(255, 0, 112, 0.4);
+  padding: 0 12px;
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid var(--accent-second-color);
+}
+
+.header {
+  min-height: 668px;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  position: relative;
+  padding: 20px;
+  height: 100vh;
+  margin-block-end: 60px;
+}
+
+.decorate {
+  text-transform: uppercase;
+  position: absolute;
+  display: flex;
+  gap: 10px;
+  top: 20px;
+  right: 20px;
+  color: #ff0070;
+  text-align: center;
+  font-family: IBM Plex Mono, 'Courier New', Courier, monospace;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 138.889%;
+}
+
+.decorate::after {
+  content: "";
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px var(--accent-color);
+  background: var(--accent-color);
+  width: 9px;
+  height: 9px;
+  margin-block-start: 8px;
+  margin-inline-end: 9px;
+
+}
+
+.decorated-zone::after {
+  content: " ";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--accent-second-color);
+  border-left: 1px solid var(--accent-second-color);
+  bottom: 20px;
+  left: 20px;
+}
+
+.decorated-zone::before {
+  content: " ";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--accent-second-color);
+  border-right: 1px solid var(--accent-second-color);
+  top: 20px;
+  right: 20px;
+}
+
+.main-title {
+  color: var(--title-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  font-family: IBM Plex Mono, 'Courier New', Courier, monospace;
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 82.5%;
+  margin-inline-start: -20px;
+  align-self: center;
+}
+
+.title {
+  color: var(--accent-second-color);
+  font-family: IBM Plex Mono, 'Courier New', Courier, monospace;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+}
+
+.title-decor {
+  color: var(--accent-font-color);
+  background-color: var(--accent-color);
+}
+
+.header-title {
+  max-width: 50%;
+  justify-self: end;
+  height: fit-content;
+  align-self: center;
+}
+
+.section {
+  margin-inline-start: 20px;
+  margin-inline-end: 20px;
+}
+
+.card-less-fraction {
+  display: flex;
+  gap: 20px;
+}
+
+.height-title {
+  min-height: 100%;
+  max-width: 32%;
+}
+
+.card-set {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 0 1 75%;
+
+}
+
+.text {
+  margin-block-start: 10px;
+  color: var(--font-color);
+  font-size: 18px;
+  font-family: IBM Plex Mono, 'Courier New', Courier, monospace;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+}
+
+.what-title {
+  display: block;
+  width: 30%;
+  margin-block-end: 20px;
+}
+
+.card-array {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(min(225px, 100%), 1fr));
+}
+
+.title-card {
+  font-weight: 400;
+}
+
+.link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.link:hover {
+  border-bottom: 1px solid var(--font-color);
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:focus-visible {
+  outline: none;
+  border: 1px solid var(--font-color);
+}
+
+.images {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(min-content, 318px));
+  grid-template-rows: repeat(3, auto);
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  margin-block-start: 20px;
+  justify-content: center;
+}
+
+.images-item {
+  width: 100%;
+  object-position: center;
+  object-fit: cover;
+  height: 100%;
+}
+
+.images-item:nth-child(1) {
+  grid-column: 1/3;
+  grid-row: 1/2;
+}
+
+.images-item:nth-child(2) {
+  grid-row: 1/3;
+
+}
+
+.images-item:nth-child(3) {
+  grid-column: 1/2;
+  grid-row: 2/4;
+}
+
+.images-item:nth-child(5) {
+  grid-column: 2/4;
+}
+
+.footer {
+  min-height: 668px;
+  padding: 20px;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-block-start: 60px;
+}
+
+.footer-title {
+  color: var(--title-color);
+  text-shadow: 2px 2px 0px var(--accent-color);
+  font-family: IBM Plex Mono, 'Courier New', Courier, monospace;
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 82.5%;
+}
+
+@media (width <= 768px) {
+  .header__theme-menu-list {
+    flex-direction: column;
+  }
+
+  .header__theme-menu {
+    justify-self: end;
+    align-self: center;
+  }
+
+  .card-array {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (width <= 620px) {
+  .page {
+    gap: 40px;
+  }
+
+  .main {
+    gap: 50px;
+  }
+
+  .header {
+    padding: 10px;
+    margin-block-end: 40px;
+  }
+
+  .decorate {
+    top: 10px;
+    right: 10px;
+  }
+
+  .decorated-zone::after {
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .decorated-zone::before {
+    top: 10px;
+    right: 10px;
+  }
+
+  .main-title {
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    margin-inline-start: 0;
+  }
+
+  .header-title {
+    max-width: 100%;
+  }
+
+  .section {
+    margin-inline-start: 10px;
+    margin-inline-end: 10px;
+  }
+
+  .card-less-fraction {
+    flex-direction: column;
+  }
+
+  .what-title {
+    width: 100%;
+  }
+
+  .height-title {
+    max-width: none;
+  }
+
+  .images {
+    margin-block-start: 5px;
+    display: block;
+  }
+
+  .images-item {
+    margin-block-start: 6px;
+  }
+
+  .footer {
+   margin-block-start: 40px;
+  }
+
+  .footer-title {
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  }
 }
