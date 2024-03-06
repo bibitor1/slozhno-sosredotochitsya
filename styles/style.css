@@ -153,7 +153,7 @@
   margin-inline-end: 20px;
 }
 
-.horizontal-section {
+.card-less-fraction {
   display: flex;
   gap: 20px;
 }
@@ -334,7 +334,7 @@
     margin-inline-end: 10px;
   }
 
-  .horizontal-section {
+  .card-less-fraction {
     flex-direction: column;
   }
 
